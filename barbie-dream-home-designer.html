@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Dream Home Designer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFC0CB;
+            text-align: center;
+            color: #FF1493;
+        }
+        .game-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .room {
+            width: 500px;
+            height: 400px;
+            background-size: cover;
+            position: relative;
+            border: 5px solid #FF69B4;
+        }
+        .palette {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .palette button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .palette button:hover {
+            background-color: #FF1493;
+        }
+        h1 {
+            color: #FF1493;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barbie Dream Home Designer</h1>
+    <div class="game-container">
+        <div class="room" id="room"></div>
+        <div class="palette">
+            <h3>Choose a Room:</h3>
+            <button onclick="changeRoom('bedroom')">Bedroom</button>
+            <button onclick="changeRoom('livingroom')">Living Room</button>
+            <button onclick="changeRoom('kitchen')">Kitchen</button>
+            <h3>Choose a Color:</h3>
+            <button onclick="changeColor('#FFB6C1')">Pink</button>
+            <button onclick="changeColor('#87CEFA')">Blue</button>
+            <button onclick="changeColor('#98FB98')">Green</button>
+            <button onclick="changeColor('#FFFFE0')">Yellow</button>
+            <button onclick="changeColor('#E6E6FA')">Lavender</button>
+        </div>
+    </div>
+    <a href="play-games.html" class="button">Back to Games</a>
+
+    <script>
+        const room = document.getElementById('room');
+        let currentRoom = 'bedroom';
+
+        function changeRoom(newRoom) {
+            currentRoom = newRoom;
+            room.style.backgroundImage = `url('images/barbie-${newRoom}.jpg')`;
+        }
+
+        function changeColor(color) {
+            room.style.backgroundColor = color;
+            room.style.backgroundBlendMode = 'overlay';
+        }
+
+        // Initialize the room
+        changeRoom('bedroom');
+    </script>
+</body>
+</html>

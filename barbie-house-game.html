@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Doll House Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFC0CB;
+            text-align: center;
+        }
+        .game-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .house {
+            width: 500px;
+            height: 400px;
+            background-image: url('images/barbie-house-empty.jpg');
+            background-size: cover;
+            position: relative;
+        }
+        .furniture {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .furniture img {
+            width: 80px;
+            height: 80px;
+            margin: 5px;
+            cursor: move;
+        }
+        .draggable {
+            position: absolute;
+            cursor: move;
+        }
+        h1 {
+            color: #FF1493;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Decorate Barbie's Dream House</h1>
+    <div class="game-container">
+        <div class="house" id="house"></div>
+        <div class="furniture">
+            <img src="images/barbie-bed.png" alt="Bed" draggable="true">
+            <img src="images/barbie-sofa.png" alt="Sofa" draggable="true">
+            <img src="images/barbie-table.png" alt="Table" draggable="true">
+            <img src="images/barbie-chair.png" alt="Chair" draggable="true">
+            <img src="images/barbie-lamp.png" alt="Lamp" draggable="true">
+            <img src="images/barbie-plant.png" alt="Plant" draggable="true">
+        </div>
+    </div>
+    <a href="play-games.html" class="button">Back to Games</a>
+
+    <script>
+        const house = document.getElementById('house');
+        let draggedItem = null;
+
+        document.addEventListener('dragstart', function(e) {
+            draggedItem = e.target.cloneNode(true);
+            draggedItem.classList.add('draggable');
+        });
+
+        house.addEventListener('dragover', function(e) {
+            e.preventDefault();
+        });
+
+        house.addEventListener('drop', function(e) {
+            e.preventDefault();
+            if (draggedItem) {
+                draggedItem.style.left = (e.clientX - house.offsetLeft - 40) + 'px';
+                draggedItem.style.top = (e.clientY - house.offsetTop - 40) + 'px';
+                house.appendChild(draggedItem);
+                draggedItem = null;
+            }
+        });
+    </script>
+</body>
+</html>

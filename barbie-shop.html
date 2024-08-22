@@ -14,7 +14,7 @@
             text-align: center;
         }
         .container {
-            background-color: rgba(255, 182, 193, 0.8);
+            background-color: #f572bacc;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
@@ -33,32 +33,139 @@
             height: 150px;
             object-fit: cover;
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 30px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Barbie Shop</h1>
-        <p>Find your favorite Barbie dolls and accessories!</p>
+        <p>Find your favorite Barbie dolls, accessories, and shoes!</p>
         
         <div class="product">
-            <img src="https://example.com/barbie-doll1.jpg" alt="Barbie Doll 1">
+            <img src="images/classic-barbie.jpg" alt="Classic Barbie">
             <h3>Classic Barbie</h3>
             <p>$19.99</p>
             <a href="#" class="button">Add to Cart</a>
         </div>
         
         <div class="product">
-            <img src="https://example.com/barbie-doll2.jpg" alt="Barbie Doll 2">
+            <img src="images/career-barbie.jpg" alt="Career Barbie">
             <h3>Career Barbie</h3>
             <p>$24.99</p>
             <a href="#" class="button">Add to Cart</a>
         </div>
         
         <div class="product">
-            <img src="https://example.com/barbie-accessory.jpg" alt="Barbie Accessory">
+            <img src="images/barbie-dreamhouse.jpg" alt="Barbie Dreamhouse">
             <h3>Barbie Dreamhouse</h3>
             <p>$99.99</p>
             <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/fashionista-barbie.jpg" alt="Fashionista Barbie">
+            <h3>Fashionista Barbie</h3>
+            <p>$21.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/mermaid-barbie.jpg" alt="Mermaid Barbie">
+            <h3>Mermaid Barbie</h3>
+            <p>$29.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/astronaut-barbie.jpg" alt="Astronaut Barbie">
+            <h3>Astronaut Barbie</h3>
+            <p>$27.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/scientist-barbie.jpg" alt="Scientist Barbie">
+            <h3>Scientist Barbie</h3>
+            <p>$26.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/athlete-barbie.jpg" alt="Athlete Barbie">
+            <h3>Athlete Barbie</h3>
+            <p>$25.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/chef-barbie.jpg" alt="Chef Barbie">
+            <h3>Chef Barbie</h3>
+            <p>$23.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/teacher-barbie.jpg" alt="Teacher Barbie">
+            <h3>Teacher Barbie</h3>
+            <p>$22.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/veterinarian-barbie.jpg" alt="Veterinarian Barbie">
+            <h3>Veterinarian Barbie</h3>
+            <p>$25.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/artist-barbie.jpg" alt="Artist Barbie">
+            <h3>Artist Barbie</h3>
+            <p>$24.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/barbie-high-heels.jpg" alt="Barbie High Heels">
+            <h3>Barbie High Heels</h3>
+            <p>$9.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/barbie-sneakers.jpg" alt="Barbie Sneakers">
+            <h3>Barbie Sneakers</h3>
+            <p>$7.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <div class="product">
+            <img src="images/barbie-boots.jpg" alt="Barbie Boots">
+            <h3>Barbie Boots</h3>
+            <p>$12.99</p>
+            <a href="#" class="button">Add to Cart</a>
+        </div>
+        
+        <h2>Barbie LOL Videos</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Vx1-XeMrt3o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         
         <a href="barbie.html" class="button">Back to Barbie World</a>

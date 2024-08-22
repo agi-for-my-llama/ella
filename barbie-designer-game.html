@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Designer Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFC0CB;
+            text-align: center;
+            color: #FF1493;
+        }
+        .game-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .barbie-container {
+            width: 300px;
+            height: 500px;
+            position: relative;
+        }
+        .barbie-part {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .palette {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .palette button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #FF69B4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .palette button:hover {
+            background-color: #FF1493;
+        }
+        h1 {
+            color: #FF1493;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barbie Designer Game</h1>
+    <div class="game-container">
+        <div class="barbie-container" id="barbie">
+            <img class="barbie-part" id="body" src="images/barbie-body.png" alt="Barbie Body">
+            <img class="barbie-part" id="hair" src="images/barbie-hair1.png" alt="Barbie Hair">
+            <img class="barbie-part" id="outfit" src="images/barbie-outfit1.png" alt="Barbie Outfit">
+        </div>
+        <div class="palette">
+            <h3>Choose Hair:</h3>
+            <button onclick="changePart('hair', 1)">Hair 1</button>
+            <button onclick="changePart('hair', 2)">Hair 2</button>
+            <button onclick="changePart('hair', 3)">Hair 3</button>
+            <h3>Choose Outfit:</h3>
+ 
