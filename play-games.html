@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie World - Play Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/background-doll.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #FF1493;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .game-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+        }
+        .game-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Barbie Games</h1>
+        <div class="game-list">
+            <div class="game-item">
+                <img src="images/dress-up-game.jpg" alt="Dress Up Game">
+                <h3>Barbie Dress Up</h3>
+                <a href="barbie-dress-up.html" class="button">Play Now</a>
+            </div>
+            <div class="game-item">
+                <img src="images/house-design-game.jpg" alt="House Design Game">
+                <h3>Dream House Designer</h3>
+                <a href="#" class="button">Play Now</a>
+            </div>
+            <div class="game-item">
+                <img src="images/pet-care-game.jpg" alt="Pet Care Game">
+                <h3>Barbie's Pet Care</h3>
+                <a href="#" class="button">Play Now</a>
+            </div>
+        </div>
+        <a href="barbie.html" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

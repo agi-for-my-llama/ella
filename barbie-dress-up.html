@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie Dress Up Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/background-doll.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #FF1493;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        #barbie-container {
+            position: relative;
+            width: 300px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        #barbie-base, .clothing-item {
+            position: absolute;
+            cursor: move;
+            user-select: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+        .clothing-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .clothing-option {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #FF69B4;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF69B4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .size-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .size-control label {
+            margin-right: 10px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Barbie Dress Up Game</h1>
+        <div id="barbie-container">
+            <img id="barbie-base" src="images/barbie-base.png" alt="Barbie">
+            <img class="clothing-item" id="top" src="" alt="Top">
+            <img class="clothing-item" id="bottom" src="" alt="Bottom">
+            <img class="clothing-item" id="shoes" src="" alt="Shoes">
+        </div>
+        <div class="size-control">
+            <label for="size-slider">Size:</label>
+            <input type="range" id="size-slider" min="50" max="150" value="100">
+        </div>
+        <div class="clothing-options">
+            <img class="clothing-option" src="images/top1.png" alt="Top 1" onclick="changeClothing('top', 'images/top1.png')">
+            <img class="clothing-option" src="images/top2.png" alt="Top 2" onclick="changeClothing('top', 'images/top2.png')">
+            <img class="clothing-option" src="images/bottom1.png" alt="Bottom 1" onclick="changeClothing('bottom', 'images/bottom1.png')">
+            <img class="clothing-option" src="images/bottom2.png" alt="Bottom 2" onclick="changeClothing('bottom', 'images/bottom2.png')">
+            <img class="clothing-option" width="80px" height="80px" src="images/shoes1.png" alt="Shoes 1" onclick="changeClothing('shoes', 'images/shoes1.png')">
+            <img class="clothing-option" width="80px" height="80px" src="images/shoes2.png" alt="Shoes 2" onclick="changeClothing('shoes', 'images/shoes2.png')">
+        </div>
+        <a href="play-games.html" class="button">Back to Games</a>
+    </div>
+
+    <script>
+        const sizeSlider = document.getElementById('size-slider');
+        const clothingItems = document.querySelectorAll('.clothing-item');
+        const barbieContainer = document.getElementById('barbie-container');
+
+        let activeItem = null;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+
+        function changeClothing(type, src) {
+            const item = document.getElementById(type);
+            item.src = src;
+            resizeClothing(item, sizeSlider.value);
+            resetPosition(item);
+        }
+
+        function resizeClothing(item, size) {
+            const scale = size / 100;
+            item.style.width = `${scale * 100}%`;
+            item.style.height = `${scale * 100}%`;
+        }
+
+        function resetPosition(item) {
+            item.style.transform = 'translate(-50%, -50%)';
+            item.style.left = '50%';
+            item.style.top = '50%';
+            xOffset = 0;
+            yOffset = 0;
+        }
+
+        sizeSlider.addEventListener('input', function() {
+            clothingItems.forEach(item => {
+                if (item.src) {
+                    resizeClothing(item, this.value);
+                }
+            });
+        });
+
+        barbieContainer.addEventListener("mousedown", dragStart, false);
+        barbieContainer.addEventListener("mouseup", dragEnd, false);
+        barbieContainer.addEventListener("mousemove", drag, false);
+
+        function dragStart(e) {
+            if (e.target.classList.contains("clothing-item")) {
+                activeItem = e.target;
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+            }
+        }
+
+        function dragEnd(e) {
+            initialX = currentX;
+            initialY = currentY;
+            activeItem = null;
+        }
+
+        function drag(e) {
+            if (activeItem) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                xOffset = currentX;
+                yOffset = currentY;
+                setTranslate(currentX, currentY, activeItem);
+            }
+        }
+
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+        }
+    </script>
+</body>
+</html>
