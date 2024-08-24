@@ -28,6 +28,14 @@
             width: 100%;
             height: 100%;
         }
+        .accessory-part {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
         .palette {
             width: 200px;
             display: flex;
@@ -67,6 +75,9 @@
             <img class="barbie-part" id="body" src="images/barbie-body.png" alt="Barbie Body">
             <img class="barbie-part" id="hair" src="images/barbie-hair1.png" alt="Barbie Hair">
             <img class="barbie-part" id="outfit" src="images/barbie-outfit1.png" alt="Barbie Outfit">
+            <img class="accessory-part" id="necklace" src="" alt="Necklace">
+            <img class="accessory-part" id="earrings" src="" alt="Earrings">
+            <img class="accessory-part" id="handbag" src="" alt="Handbag">
         </div>
         <div class="palette">
             <h3>Choose Hair:</h3>
@@ -74,4 +85,26 @@
             <button onclick="changePart('hair', 2)">Hair 2</button>
             <button onclick="changePart('hair', 3)">Hair 3</button>
             <h3>Choose Outfit:</h3>
+            <button onclick="changePart('outfit', 1)">Outfit 1</button>
+            <button onclick="changePart('outfit', 2)">Outfit 2</button>
+            <button onclick="changePart('outfit', 3)">Outfit 3</button>
+            <h3>Choose Accessories:</h3>
+            <button onclick="changeAccessory('necklace', 1)">Necklace 1</button>
+            <button onclick="changeAccessory('necklace', 2)">Necklace 2</button>
+            <button onclick="changeAccessory('earrings', 1)">Earrings 1</button>
+            <button onclick="changeAccessory('earrings', 2)">Earrings 2</button>
+            <button onclick="changeAccessory('handbag', 1)">Handbag 1</button>
+            <button onclick="changeAccessory('handbag', 2)">Handbag 2</button>
+        </div>
+    </div>
+    <a href="play-games.html" class="button">Back to Games</a>
+
+    <script>
+        function changePart(part, number) {
+            const element = document.getElementById(part);
+            element.src = `images/barbie-${part}${number}.png`;
+        }
+
+        function changeAccessory(accessory, number) {
+            const element = document.getElementById(accessory);
  

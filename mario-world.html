@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario World</title>
+    <style>
+        body {
+            font-family: 'Super Mario', Arial, sans-serif;
+            background-color: #87CEEB;
+            color: #FF0000;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #FFD700;
+            text-shadow: 2px 2px #000000;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #008000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .book {
+            display: inline-block;
+            width: 200px;
+            margin: 10px;
+            vertical-align: top;
+        }
+        .book img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Mario World!</h1>
+        <img src="images/mario-banner.jpg" alt="Mario and Friends">
+        
+        <div class="section">
+            <h2>Mario Games</h2>
+            <p>Play these fun Mario-themed games!</p>
+            <a href="#" class="button">Super Mario Run</a>
+            <a href="#" class="button">Mario Kart Tour</a>
+            <a href="#" class="button">Dr. Mario World</a>
+        </div>
+        
+        <div class="section">
+            <h2>Mario Characters</h2>
+            <p>Learn about your favorite Mario characters!</p>
+            <ul>
+                <li>Mario</li>
+                <li>Luigi</li>
+                <li>Princess Peach</li>
+                <li>Yoshi</li>
+                <li>Bowser</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Super Mario Books</h2>
+            <p>Discover exciting Mario adventures in these books!</p>
+            <div class="book">
+                <img src="images/mario-adventure-book.jpg" alt="Super Mario Adventure Book">
+                <h3>Super Mario Adventure</h3>
+                <p>Join Mario on his quest to save the Mushroom Kingdom!</p>
+            </div>
+            <div class="book">
+                <img src="images/luigi-mansion-book.jpg" alt="Luigi's Mansion Book">
+                <h3>Luigi's Mansion: The Spooky Tale</h3>
+                <p>Follow Luigi as he explores a haunted mansion!</p>
+            </div>
+            <div class="book">
+                <img src="images/mario-kart-book.jpg" alt="Mario Kart: Race to Victory Book">
+                <h3>Mario Kart: Race to Victory</h3>
+                <p>Experience the thrill of Mario Kart races in this exciting book!</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Mario Coloring Pages</h2>
+            <p>Download and color these fun Mario pictures!</p>
+            <a href="#" class="button" onclick="alert('Downloading Mario Coloring Page')">Mario Coloring Page</a>
+            <a href="#" class="button" onclick="alert('Downloading Luigi Coloring Page')">Luigi Coloring Page</a>
+        </div>
+        
+        <div class="section">
+            <h2>Mario Fun Facts</h2>
+            <p>Did you know?</p>
+            <ul>
+                <li>Mario was originally called "Jumpman"</li>
+                <li>Mario's full name is Mario Mario</li>
+                <li>Yoshi's full name is T. Yoshisaur Munchakoopas</li>
+            </ul>
+        </div>
+        
+        <a href="barbie.html" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
